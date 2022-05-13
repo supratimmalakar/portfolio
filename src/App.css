@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: #2a2a2a;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  width : fit-content;
+  height : fit-content;
+}
+
+.flex.fill {
+  height: 100%;
+}
+
+.flex.center {
+  justify-content: center;
+}

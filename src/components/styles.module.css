@@ -1,0 +1,11 @@
+.c {
+  position : absolute;
+  top : 5vh;
+  right : 5vw;
+  left : 5vw;
+  max-width: 500px;
+  max-height: 500px;
+  /* width: 99vw;
+  height: 100vh; */
+  will-change: transform, opacity;
+}
