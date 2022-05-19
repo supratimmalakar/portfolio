@@ -3,8 +3,8 @@ import Container from './Container'
 
 function Contact() {
   return (
-      <Container styles={{ background: 'grey' }} prevTab='portfolio'>
-          <h1>Contact</h1>
+    <Container styles={{ background: '#2f2f2f' }} prevTab='portfolio'>
+          
       </Container>
   )
 }

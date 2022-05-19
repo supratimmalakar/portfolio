@@ -20,11 +20,11 @@
     top: 5px;
     right : 0;
     width : 40px;
-    height : 5px;
-    background-color: rgb(156, 159, 160);
+    height : 3px;
+    background-color: #8a8a8a;
     border-radius: 2px;
     transform: rotate(45deg);
-    transform-origin: 95% center;
+    transform-origin: 97% center;
 }
 
 .right-bottom-bar {
@@ -32,11 +32,11 @@
     top: 5px;
     right : 0;
     width : 40px;
-    height : 5px;
-    background-color: rgb(156, 159, 160);
+    height : 3px;
+    background-color: #8a8a8a;
     border-radius: 2px;
     transform: rotate(-45deg);
-    transform-origin: 95% center;
+    transform-origin: 97% center;
 }
 
 .left-arrow-icon {
@@ -51,11 +51,11 @@
     top: 5px;
     left : 0;
     width : 40px;
-    height : 5px;
-    background-color: rgb(156, 159, 160);
+    height : 3px;
+    background-color: #8a8a8a;
     border-radius: 2px;
     transform: rotate(45deg);
-    transform-origin: 5% center;
+    transform-origin: 3% center;
 }
 
 .left-top-bar {
@@ -63,13 +63,17 @@
     top: 5px;
     left : 0;
     width : 40px;
-    height : 5px;
-    background-color: rgb(156, 159, 160);
+    height : 3px;
+    background-color: #8a8a8a;
     border-radius: 2px;
     transform: rotate(-45deg);
-    transform-origin: 5% center;
+    transform-origin: 3% center;
 }
 
 .tab-name {
     position: relative;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25em;
+    color: #8a8a8a;
+    font-weight: 700;
 }

@@ -64,7 +64,7 @@ function Container({ styles, children, itemProps = {}, nextTab = null, prevTab =
     },[])
 
     return (
-        <Grid style={{ ...styles, height: '90vh', width: '95vw' }} container className={classes.containerGrid} direction='row' justifyContent='space-between' alignItems='center'>
+        <Grid style={{ ...styles, height: '90vh', width: '95vw', padding: '0 10px' }} container className={classes.containerGrid} direction='row' justifyContent='space-between' alignItems='center'>
             <Grid className={classes.itemGrid} item container xs={1} alignItems='center' justifyContent='center'>
                 {prevTab &&
                     <a.div
