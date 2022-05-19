@@ -77,3 +77,17 @@
     color: #8a8a8a;
     font-weight: 700;
 }
+
+
+
+.container-grid::-webkit-scrollbar {
+    background-color:transparent;
+    width:5px
+}
+.container-grid::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+.container-grid::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.226);
+    border-radius:16px;
+} 

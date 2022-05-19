@@ -8,7 +8,14 @@ import { useSpring, a } from 'react-spring'
 
 const useStyles = makeStyles({
     itemGrid: {
-        height: '100%'
+        height: '100%',
+    },
+    arrowitemGridGrid : {
+        height : '50px',
+        position: '-webkit - sticky',
+        position: 'sticky',
+        top: 'calc(50% - 25px)',
+        bottom: 'calc(50% - 25px)',
     }
 })
 
@@ -64,8 +71,8 @@ function Container({ styles, children, itemProps = {}, nextTab = null, prevTab =
     },[])
 
     return (
-        <Grid style={{ ...styles, height: '90vh', width: '95vw', padding: '0 10px' }} container className={classes.containerGrid} direction='row' justifyContent='space-between' alignItems='center'>
-            <Grid className={classes.itemGrid} item container xs={1} alignItems='center' justifyContent='center'>
+        <Grid style={{ ...styles, height: '90vh', width: '95vw', padding: '0 10px', overflowY : 'auto', position : 'relative' }} container className={CSSstyles['container-grid']} direction='row' justifyContent='space-between' alignItems='center'>
+            <Grid className={classes.arrowitemGridGrid} item container xs={1} alignItems='center' justifyContent='center'>
                 {prevTab &&
                     <a.div
                         style={leftArrowBoxStyle}
@@ -102,7 +109,7 @@ function Container({ styles, children, itemProps = {}, nextTab = null, prevTab =
             <Grid className={classes.itemGrid} item xs={10} {...itemProps}>
                 {children}
             </Grid>
-            <Grid className={classes.itemGrid} item container xs={1} alignItems='center' justifyContent='center'>
+            <Grid className={classes.arrowitemGridGrid} item container xs={1} alignItems='center' justifyContent='center'>
                 {nextTab &&
                     <a.div
                         style={rightArrowBoxStyle}
