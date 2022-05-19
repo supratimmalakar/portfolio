@@ -1,9 +1,9 @@
 import React from 'react'
 import Container from './Container'
 
-function Contact({ set, flipped, setFrontTab, setBackTab}) {
+function Contact() {
   return (
-      <Container set={set} styles={{ background: 'grey' }} prevTab='portfolio'>
+      <Container styles={{ background: 'grey' }} prevTab='portfolio'>
           <h1>Contact</h1>
       </Container>
   )

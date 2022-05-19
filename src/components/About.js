@@ -1,9 +1,9 @@
 import React from 'react'
 import Container from './Container'
 
-function About({set, flipped, setFrontTab, setBackTab}) {
+function About() {
   return (
-      <Container set={set} styles={{background : 'grey'}} nextTab='portfolio'>
+      <Container styles={{background : 'grey'}} nextTab='portfolio'>
         <h1>About</h1>
       </Container>
   )

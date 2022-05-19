@@ -1,8 +1,8 @@
 .c {
   position : absolute;
   top : 5vh;
-  right : 5vw;
-  left : 5vw;
+  right : 2.5vw;
+  left : 2.5vw;
   max-width: 500px;
   max-height: 500px;
   /* width: 99vw;

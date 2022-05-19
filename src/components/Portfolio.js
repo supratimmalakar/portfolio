@@ -1,9 +1,9 @@
 import  Container  from './Container'
 import React from 'react'
 
-function Portfolio({ set, flipped, setFrontTab, setBackTab}) {
+function Portfolio() {
   return (
-      <Container set={set} styles={{background : 'green'}} nextTab='contact' prevTab='about'>
+      <Container styles={{background : 'green'}} nextTab='contact' prevTab='about'>
         <h1>Portfolio</h1>
       </Container>
   )

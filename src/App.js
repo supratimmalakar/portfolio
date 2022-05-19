@@ -1,16 +1,16 @@
 import './App.css';
-import React, { useState } from 'react'
+import React from 'react'
 import About from './components/About';
 import Portfolio from './components/Portfolio';
 import { useSpring, a } from '@react-spring/web'
 import styles from './components/styles.module.css'
 import Contact from './components/Contact';
+import { useSelector } from 'react-redux'
 
 function App() {
   const tabs = ['about', 'portfolio', 'contact']
-  const [backTab, setBackTab] = useState(tabs[1])
-  const [frontTab, setFrontTab] = useState(tabs[0])
-  const [flipped, set] = useState(false)
+  const {backCard, frontCard, flipped} = useSelector((state) => state.card)
+
   const { transform, opacity, zIndex } = useSpring({
     opacity: flipped ? 1 : 0,
     zIndex: flipped ? 1 : 0,
@@ -21,41 +21,41 @@ function App() {
   const getTab = (tab) => {
     switch (tab) {
       case tabs[0]:
-        return <About set={set} flipped={flipped} setBackTab={setBackTab} setFrontTab={setFrontTab} />
+        return <About/>
 
       case tabs[1]:
-        return <Portfolio set={set} flipped={flipped} setBackTab={setBackTab} setFrontTab={setFrontTab} />
+        return <Portfolio/>
 
       case tabs[2]:
-        return <Contact set={set} flipped={flipped} setBackTab={setBackTab} setFrontTab={setFrontTab} />
+        return <Contact/>
 
       default:
-        return <About set={set} flipped={flipped} setBackTab={setBackTab} setFrontTab={setFrontTab} />
+        return <About/>
     }
   }
 
   return (
-    <div className="App flex fill center">
-      <a.div
-        className={styles.c}
-        style={{
-          opacity: opacity.to(o => 1 - o),
-          transform,
-          zIndex: zIndex.to(o => 1 - o)
-        }}>
-        {getTab(frontTab)}
-      </a.div>
-      <a.div
-        className={styles.c}
-        style={{
-          opacity,
-          transform,
-          rotateY: '180deg',
-          zIndex
-        }}>
-        {getTab(backTab)}
-      </a.div>
-    </div>
+      <div className="App flex fill center">
+        <a.div
+          className={styles.c}
+          style={{
+            opacity: opacity.to(o => 1 - o),
+            transform,
+            zIndex: zIndex.to(o => 1 - o)
+          }}>
+          {getTab(frontCard)}
+        </a.div>
+        <a.div
+          className={styles.c}
+          style={{
+            opacity,
+            transform,
+            rotateY: '180deg',
+            zIndex
+          }}>
+          {getTab(backCard)}
+        </a.div>
+      </div>
   );
 }
 
