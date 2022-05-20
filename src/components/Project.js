@@ -36,7 +36,7 @@ function Project({title, mainImg, hoverImg, tags}) {
             <a.img style={{...hover}} className={styles.hoverImg} src={hoverImg} />
             <a.div style={{ ...tagsStyle }} className={styles.tags}>
               <div className={styles['tags-wrap']}>
-                {tags.map(tag => <div className={styles.tag}><p>{tag} </p></div>)}
+                {tags.map((tag, i) => <div key={i} className={styles.tag}><p>{tag} </p></div>)}
               </div>
             </a.div>
         </div>
