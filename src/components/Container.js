@@ -71,7 +71,7 @@ function Container({ styles, children, itemProps = {}, nextTab = null, prevTab =
     },[])
 
     return (
-        <Grid style={{ ...styles, height: '90vh', width: '95vw', padding: '0 10px', overflowY : 'auto', position : 'relative' }} container className={CSSstyles['container-grid']} direction='row' justifyContent='space-between' alignItems='center'>
+        <Grid style={{ ...styles, height: '90vh', width: '95vw', padding: '0 10px', overflowY : 'auto', position : 'relative'}} container className={CSSstyles['container-grid']} direction='row' justifyContent='space-between' alignItems='center'>
             <Grid className={classes.arrowitemGridGrid} item container xs={1} alignItems='center' justifyContent='center'>
                 {prevTab &&
                     <a.div
