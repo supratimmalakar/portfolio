@@ -9,3 +9,7 @@
   height: 100vh; */
   will-change: transform, opacity;
 }
+
+.app-div {
+  transform-origin: center right;
+}

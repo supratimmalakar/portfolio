@@ -88,6 +88,6 @@
     background-color: transparent;
 }
 .container-grid::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.226);
+    background-color: rgba(107, 107, 107, 0.626);
     border-radius:16px;
 } 

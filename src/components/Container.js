@@ -1,17 +1,21 @@
 import React, { useEffect } from 'react'
 import { Grid, makeStyles } from '@material-ui/core'
 import { useSelector, useDispatch } from 'react-redux'
-import { flip, setFront, setBack} from '../redux/cardSlice'
+import { flip, setFront, setBack } from '../redux/cardSlice'
+import { setBool} from '../redux/animateSlice'
 import CSSstyles from './Container.module.css'
 import { useSpring, a } from 'react-spring'
+import { useNavigate } from "react-router-dom";
+import AbsoluteWrapper from './AbsoluteWrapper'
+
 
 
 const useStyles = makeStyles({
     itemGrid: {
         height: '100%',
     },
-    arrowitemGridGrid : {
-        height : '50px',
+    arrowitemGridGrid: {
+        height: '50px',
         position: '-webkit - sticky',
         position: 'sticky',
         top: 'calc(50% - 25px)',
@@ -20,7 +24,7 @@ const useStyles = makeStyles({
 })
 
 function Container({ styles, children, itemProps = {}, nextTab = null, prevTab = null }) {
-
+    let navigate = useNavigate();
     const { flipped } = useSelector(state => state.card)
     const dispatch = useDispatch()
 
@@ -36,7 +40,7 @@ function Container({ styles, children, itemProps = {}, nextTab = null, prevTab =
 
     const [arrowRightText, setRightText] = useSpring(() => ({
         opacity: 0,
-        x : 20
+        x: 20
     }))
 
     const [topLeftBar, setTopLeftBar] = useSpring(() => ({
@@ -49,11 +53,11 @@ function Container({ styles, children, itemProps = {}, nextTab = null, prevTab =
 
     const [arrowLeftText, setLeftText] = useSpring(() => ({
         opacity: 0,
-        x : -20
+        x: -20
     }))
 
-    const [rightArrowBoxStyle, setRightArrowBoxStyle] = useSpring(()=> ({
-        x : 400,
+    const [rightArrowBoxStyle, setRightArrowBoxStyle] = useSpring(() => ({
+        x: 400,
 
     }))
 
@@ -62,89 +66,92 @@ function Container({ styles, children, itemProps = {}, nextTab = null, prevTab =
     }))
 
     useEffect(() => {
-            setRightArrowBoxStyle({
-                x : 0
-            })
-            setLeftArrowBoxStyle({
-                x: 0
-            }) 
-    },[])
+        setRightArrowBoxStyle({
+            x: 0
+        })
+        setLeftArrowBoxStyle({
+            x: 0
+        })
+    }, [])
 
     return (
-        <Grid style={{ ...styles, height: '90vh', width: '95vw', padding: '0 10px', overflowY : 'auto', position : 'relative'}} container className={CSSstyles['container-grid']} direction='row' justifyContent='space-between' alignItems='center'>
+        <AbsoluteWrapper>
+            <Grid style={{ ...styles, height: '100vh', width: '100vw', padding: '0 10px', overflowY: 'auto', position: 'relative', overflowX: 'hidden', }} container className={CSSstyles['container-grid']} direction='row' justifyContent='space-between' alignItems='center'>
             <Grid className={classes.arrowitemGridGrid} item container xs={1} alignItems='center' justifyContent='center'>
                 {prevTab &&
-                    <a.div
-                        style={leftArrowBoxStyle}
-                        onClick={() => {
-                            flipped ? dispatch(setFront(prevTab)) : dispatch(setBack(prevTab))
-                            setTimeout(() => dispatch(flip()), 300)
-                        }}
-                        onMouseEnter={() => {
-                            setTopLeftBar({ transform: `rotate(65deg)` })
-                            setBottomLeftBar({ transform: `rotate(-65deg)` })
-                            setLeftText({
-                                opacity: 1,
-                                x: 0
-                            })
-                        }}
-                        onMouseLeave={() => {
-                            setTopLeftBar({ transform: `rotate(45deg)` })
-                            setBottomLeftBar({ transform: `rotate(-45deg)` })
-                            setLeftText({
-                                opacity: 0,
-                                x: -20
-                            })
-                        }}
-                        className={CSSstyles['arrow-btn']}>
-                        <div className={CSSstyles['left-arrow-icon']}>
-                            <a.span style={{ transform: bottomLeftBar.transform }} className={CSSstyles["left-top-bar"]}></a.span>
-                            <a.span style={{ transform: topLeftBar.transform }} className={CSSstyles["left-bottom-bar"]}></a.span>
-                        </div>
-                        <a.div style={{ ...arrowLeftText }} className={CSSstyles['tab-name']}>
-                            {prevTab}
-                        </a.div>
-                    </a.div>}
+                        <a.div
+                            style={leftArrowBoxStyle}
+                            onClick={() => {
+                                dispatch(setBool(true))
+                                
+                                navigate(`/${prevTab}`)
+                            }}
+                            onMouseEnter={() => {
+                                setTopLeftBar({ transform: `rotate(65deg)` })
+                                setBottomLeftBar({ transform: `rotate(-65deg)` })
+                                setLeftText({
+                                    opacity: 1,
+                                    x: 0
+                                })
+                            }}
+                            onMouseLeave={() => {
+                                setTopLeftBar({ transform: `rotate(45deg)` })
+                                setBottomLeftBar({ transform: `rotate(-45deg)` })
+                                setLeftText({
+                                    opacity: 0,
+                                    x: -20
+                                })
+                            }}
+                            className={CSSstyles['arrow-btn']}>
+                            <div className={CSSstyles['left-arrow-icon']}>
+                                <a.span style={{ transform: bottomLeftBar.transform }} className={CSSstyles["left-top-bar"]}></a.span>
+                                <a.span style={{ transform: topLeftBar.transform }} className={CSSstyles["left-bottom-bar"]}></a.span>
+                            </div>
+                            <a.div style={{ ...arrowLeftText }} className={CSSstyles['tab-name']}>
+                                {prevTab}
+                            </a.div>
+                        </a.div>}
             </Grid>
             <Grid className={classes.itemGrid} item xs={10} {...itemProps}>
                 {children}
             </Grid>
             <Grid className={classes.arrowitemGridGrid} item container xs={1} alignItems='center' justifyContent='center'>
-                {nextTab &&
-                    <a.div
-                        style={rightArrowBoxStyle}
-                        onClick={() => {
-                            flipped ? dispatch(setFront(nextTab)) : dispatch(setBack(nextTab))
-                            setTimeout(() => dispatch(flip()), 300)
-                        }}
-                        onMouseEnter={() => {
-                            setTopRightBar({ transform: `rotate(65deg)` })
-                            setBottomRightBar({ transform: `rotate(-65deg)` })
-                            setRightText({
-                                opacity: 1,
-                                x : 0
-                            })
-                        }}
-                        onMouseLeave={() => {
-                            setTopRightBar({ transform: `rotate(45deg)` })
-                            setBottomRightBar({ transform: `rotate(-45deg)` })
-                            setRightText({
-                                opacity: 0,
-                                x: 20
-                            })
-                        }}
-                        className={CSSstyles['arrow-btn']}
-                    >
-                        <a.div style={{ ...arrowRightText }} className={CSSstyles['tab-name']}>
-                            {nextTab}
-                        </a.div>
-                        <div className={CSSstyles['right-arrow-icon']}>
-                            <a.span style={{ transform: topRightBar.transform }} className={CSSstyles["right-top-bar"]}></a.span>
-                            <a.span style={{ transform: bottomRightBar.transform }} className={CSSstyles["right-bottom-bar"]}></a.span>
-                        </div>
-                    </a.div>}
+                {nextTab &&                  
+                        <a.div
+                            style={rightArrowBoxStyle}
+                            onClick={() => {
+                                dispatch(setBool(false))
+                                navigate(`/${nextTab}`)
+                            }}
+                            onMouseEnter={() => {
+                                setTopRightBar({ transform: `rotate(65deg)` })
+                                setBottomRightBar({ transform: `rotate(-65deg)` })
+                                setRightText({
+                                    opacity: 1,
+                                    x: 0
+                                })
+                            }}
+                            onMouseLeave={() => {
+                                setTopRightBar({ transform: `rotate(45deg)` })
+                                setBottomRightBar({ transform: `rotate(-45deg)` })
+                                setRightText({
+                                    opacity: 0,
+                                    x: 20
+                                })
+                            }}
+                            className={CSSstyles['arrow-btn']}
+                        >
+                            <a.div style={{ ...arrowRightText }} className={CSSstyles['tab-name']}>
+                                {nextTab}
+                            </a.div>
+                            <div className={CSSstyles['right-arrow-icon']}>
+                                <a.span style={{ transform: topRightBar.transform }} className={CSSstyles["right-top-bar"]}></a.span>
+                                <a.span style={{ transform: bottomRightBar.transform }} className={CSSstyles["right-bottom-bar"]}></a.span>
+                            </div>
+                        </a.div>}
             </Grid>
         </Grid>
+        </AbsoluteWrapper>
     )
 }
 
