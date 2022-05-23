@@ -17,18 +17,14 @@ function Contact() {
   const form = useRef();
 
   const onSubmit = (data, e) => {
-    console.log(data)
     emailjs.sendForm('service_iczebk9', 'template_5jw8hwm', form.current, 'nvlPFV_vyDI6md6fE')
       .then((result) => {
-        console.log(result.text);
         setOpenSuccess(true)
         e.target.reset()
       }, (error) => {
-        console.log(error.text);
         setOpenError(true)
       });
   };
-  console.log(errors)
   return (
     <Container styles={{ background: '#2f2f2f' }} prevTab='portfolio' nextTab='about'>
       <div className={styles.container}>

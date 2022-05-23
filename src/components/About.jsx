@@ -1,7 +1,5 @@
-import React, {Suspense} from 'react'
+import React from 'react'
 import Container from './Container'
-import { Canvas } from '@react-three/fiber'
-import SpaceShip from './SpaceShip'
 import styles from './About.module.css'
 import Social from './Social'
 

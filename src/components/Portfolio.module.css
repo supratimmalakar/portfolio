@@ -5,7 +5,7 @@
     width: 65%;
     margin: 0 auto;
     padding: 80px 0;
-    height: 100%;
+    min-height: 100%;
 }
 
 .container > h1 {
@@ -43,4 +43,35 @@
     font-weight: 400;
     margin-top: 0;
     text-align: left;
+}
+
+.tags-wrap {
+    display : flex; 
+    flex-direction : row; 
+    width : 100%; 
+    align-items: center; 
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.tag > p {
+    text-transform: uppercase;
+    font-family: 'MontSerrat',sans-serif;
+    font-weight: 700;
+    font-size: .75em;
+    line-height: 1em;
+    color: #999;
+    margin: 0;
+}
+
+.tag {
+    display: inline-block;
+    padding: 8px 5px;
+    background-color: #313131;
+    color: #999;
+    border-width: 1px 1px 2px 1px;
+    border-style: solid;
+    border-color: #222;
+    border-radius: 3px;
+    margin: 2px;
 }

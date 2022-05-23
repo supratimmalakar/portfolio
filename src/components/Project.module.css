@@ -42,16 +42,37 @@
     position: relative;
 }
 
+.imgDiv {
+    background: #fff;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.imgHoverDiv {
+    background: #fff;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: brightness(50%);
+    z-index: 99;
+}
+
 .mainImg {
     width: 100%;
 }
 
 .hoverImg {
-    position: absolute;
+    
     width: 100%;
-    left: 0;
-    filter: brightness(50%);
-    z-index: 99;
+    
 }
 
 .tags {

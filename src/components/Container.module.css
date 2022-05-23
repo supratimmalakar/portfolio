@@ -91,3 +91,29 @@
     background-color: rgba(107, 107, 107, 0.626);
     border-radius:16px;
 } 
+
+.back {
+    /* position: -webkit - sticky;
+    position: sticky; */
+    position: absolute;
+    top: 2%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 8.1%;
+    
+}
+
+.back > p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95em;
+    color: #8a8a8a;
+    font-weight: 500;
+    transition: 0.3s ease-in-out;
+}
+
+.back:hover > p {
+    margin-left: 5px;
+}
