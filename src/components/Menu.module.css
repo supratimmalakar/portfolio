@@ -1,0 +1,105 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    background: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease-in-out;
+}
+
+.back {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.bar {
+    height: 2px;
+    width: 100%;
+    background-color: #8a8a8a;
+    transform-origin: 50% 50%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transition: .45s cubic-bezier(.43,.77,.15,1.5);   
+}
+
+.barOne {
+    transform: rotate(45deg);
+}
+
+.barTwo {
+    transform: rotate(-45deg);
+}
+
+.back:hover > .barOne {
+    transform: rotate(30deg);
+}
+
+.back:hover > .barTwo {
+    transform: rotate(-30deg);
+}
+
+.menu {
+    width: 40%;
+    background-color: #25252511;
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 150px;
+    position: relative;
+}
+
+.options > p {
+    position: relative;
+    z-index: 10004;
+    color: #5a5a5a;
+    font-size: 2.825em;
+    line-height: 1.45em;
+    font-weight: 700;
+    letter-spacing: 0px;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    text-shadow: 2px 2px 0 rgb(0 0 0 / 15%);
+    font-family: 'MontSerrat', sans-serif;
+}
+
+.hover-1 {
+    height: 70%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    background-color: #2e2e2e;
+    z-index: 10003;
+    transition: 0.4s ease-in-out;
+}
+
+.hover-2 {
+    height: 70%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    background-color: #2d2d2d;
+    z-index: 10001;
+    transition: 0.3s ease-in-out;
+}
+
+.options:hover > .hover-1, .options:hover > .hover-2 {
+    width: 100%;
+}

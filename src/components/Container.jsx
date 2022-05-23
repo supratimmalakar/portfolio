@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Grid, makeStyles } from '@material-ui/core'
 import { useSelector, useDispatch } from 'react-redux'
 import { setBool} from '../redux/animateSlice'
+import { menuToggle } from '../redux/menuSlice'
 import CSSstyles from './Container.module.css'
 import { useSpring, a } from 'react-spring'
 import { useNavigate } from "react-router-dom";
@@ -162,7 +163,6 @@ function Container({ styles, children, itemProps = {}, nextTab = null, prevTab =
                       ? null
                       : projects[indexKey - 1].title
                     : prevTab}
-                  {/* {prevTab} */}
                 </a.div>
               </a.div>
             )}
@@ -178,6 +178,11 @@ function Container({ styles, children, itemProps = {}, nextTab = null, prevTab =
             alignItems="center"
             justifyContent="center"
           >
+            <div className={CSSstyles['menu']} onClick={() => dispatch(menuToggle())}>
+                <div className={CSSstyles.menuBar}/>
+                <div className={CSSstyles.menuBar}/>
+                <div className={CSSstyles.menuBar}/>
+            </div>
             {nextTab && (
               <a.div
                 style={rightArrowBoxStyle}
@@ -217,7 +222,6 @@ function Container({ styles, children, itemProps = {}, nextTab = null, prevTab =
                       ? null
                       : projects[indexKey + 1].title
                     : nextTab}
-                  {/* {nextTab} */}
                 </a.div>
                 <div className={CSSstyles["right-arrow-icon"]}>
                   <a.span

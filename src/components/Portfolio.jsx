@@ -9,7 +9,6 @@ import triomics from '../assets/triomics.png'
 import kazam from '../assets/kazam.png'
 import chisel from '../assets/chisel.webp'
 import Company from './Company'
-import ShortUniqueId from "short-unique-id";
 import triomicsHover from '../assets/test.jpg'
 import triomicsMain from "../assets/screenshot.png";
 import chatMain from '../assets/chatMain.png'
@@ -17,9 +16,6 @@ import chatHover from '../assets/chatHover.png'
 import triomics1 from '../assets/triomics1.jpg'
 import triomics2 from "../assets/triomics2.jpg";
 import triomics3 from "../assets/triomics3.jpg";
-
-
-const uid = new ShortUniqueId({length : 8})
 
 export const projects = [
   {
@@ -42,7 +38,7 @@ export const projects = [
     hoverImg: chatHover,
     id: 2,
     shortDesc: "Very nice project. 100%. Also there is a girl i like.",
-    description: `Project developed as a contractor with the SKY GO (UK) Desktop team. The Sky Go Desktop app is a React web application build on top of the Electron framework.\n\ At this project I acted as the lead UI/UX developer specialist being the bridge between UI/UX Design, PO and the UI development team. The main challenge was to reorganize the UI structure from a react-virtualized grid into a pure CSS one. Which improved drastically the scalability and maintainability of the project.`,
+    description: `Project developed as a contractor with the SKY GO (UK) Desktop team. The Sky Go Desktop app is a React web application build on top of the Electron framework.\n At this project I acted as the lead UI/UX developer specialist being the bridge between UI/UX Design, PO and the UI development team. The main challenge was to reorganize the UI structure from a react-virtualized grid into a pure CSS one. Which improved drastically the scalability and maintainability of the project.`,
     technicals: ["UX Architecture", "React", "Your Mom", "Redux"],
     appLink: "https://myfirechat.netlify.app/",
     repoLink: "https://github.com/supratimmalakar/Chat-App",
@@ -54,7 +50,7 @@ export const projects = [
     hoverImg: hover,
     id: 3,
     shortDesc: "Very nice project. 100%. Also there is a girl i like.",
-    description: `Project developed as a contractor with the SKY GO (UK) Desktop team. The Sky Go Desktop app is a React web application build on top of the Electron framework.\n\At this project I acted as the lead UI/UX developer specialist being the bridge between UI/UX Design, PO and the UI development team. The main challenge was to reorganize the UI structure from a react-virtualized grid into a pure CSS one. Which improved drastically the scalability and maintainability of the project.`,
+    description: `Project developed as a contractor with the SKY GO (UK) Desktop team. The Sky Go Desktop app is a React web application build on top of the Electron framework.\n At this project I acted as the lead UI/UX developer specialist being the bridge between UI/UX Design, PO and the UI development team. The main challenge was to reorganize the UI structure from a react-virtualized grid into a pure CSS one. Which improved drastically the scalability and maintainability of the project.`,
     technicals: ["UX Architecture", "React", "Your Mom", "Redux"],
   },
 ];
@@ -110,7 +106,7 @@ function Portfolio() {
           and Node.JS. Check out my latest web software development portfolio
           projects.
         </h3>
-        <h2>skills</h2>
+        <h2>Skills</h2>
         <div className={styles["tags-wrap"]}>
           {skills.map((tag, i) => (
             <div key={i} className={styles.tag}>
@@ -118,7 +114,7 @@ function Portfolio() {
             </div>
           ))}
         </div>
-        <h2>latest work</h2>
+        <h2>Latest work</h2>
         <Grid
           style={{ paddingBottom: "20px" }}
           container
@@ -133,11 +129,11 @@ function Portfolio() {
             );
           })}
         </Grid>
-        <h2>experience</h2>
+        <h2>Experience</h2>
         <Grid container direction="row" spacing={3}>
           {companies.map((company, i) => {
             return (
-              <Grid item xs={6}>
+              <Grid item xs={6} key={i}>
                 <Company {...company} />
               </Grid>
             );

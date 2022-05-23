@@ -11,9 +11,6 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import GitHubIcon from "@material-ui/icons/GitHub";
 
 function ProjectExpand() {
-  const dispatch = useDispatch();
-  let navigate = useNavigate();
-
   let { projectId } = useParams();
   projectId = parseInt(projectId);
   let index = projects.map((project) => project.id).indexOf(projectId);
