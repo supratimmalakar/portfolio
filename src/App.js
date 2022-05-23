@@ -8,6 +8,7 @@ import Contact from './components/Contact';
 import { useSelector } from 'react-redux'
 import { Route, useLocation, Routes, Navigate } from "react-router";
 import ProjectExpand from './components/ProjectExpand';
+import Menu from './components/Menu';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
 
   return (
     <div className="App flex fill center">
+      <Menu/>
       {transitions((props, item) => (
         // <a.div style={{opacity : props.opacity, transform : props.xy.to(perspective)}}>
         <a.div className={styles['app-div']} style={{ ...props, transform : props.ys.to(perspective), transformOrigin : 'center right'}}>
