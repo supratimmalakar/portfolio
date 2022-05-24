@@ -40,6 +40,9 @@
     width: 100%;
     overflow: hidden;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .black-screen {
@@ -116,5 +119,6 @@
     line-height: 1.2em;
     word-spacing: 0.005em;
     font-weight: 400;
-    margin-top: 0;
+    padding: 0 30px;
+    max-height: 125px;
 }

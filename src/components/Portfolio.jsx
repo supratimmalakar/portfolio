@@ -58,7 +58,7 @@ export const projects = [
 export const companies = [
   {
     title: "Chisel",
-    description: "Very nice company 10/10",
+    description: "My main contributions to this product were in form of improvements to the overall UI(using React-Redux and Semantic UI) and troubleshootingand debugging the code to ensure compatibility across a range of devices.",
     period: "Nov 2020 - Mar 2020",
     color: "linear-gradient(85.69deg,#5f0a87 .86%,#a4508b 104.2%)",
     logo: chisel,
@@ -68,7 +68,7 @@ export const companies = [
   },
   {
     title: "Kazam EV Tech",
-    description: "Very nice company 10/10",
+    description: "My main responsibilities as a member of the web team of Kazam was to build most of the frontend of their website usingtechnologies like NextJS, Bootstrap etc and then integrate the frontend with the backend.",
     period: "July 2021 - Sep 2021",
     color: "black",
     logo: kazam,
@@ -78,7 +78,7 @@ export const companies = [
   },
   {
     title: "Triomics",
-    description: "Very nice company 10/10",
+    description: "Worked as Frontend Developer, created responsive frontend components from wireframes, integrated Restful APIs.Worked on their local component library called 'freyja', ",
     period: "Nov 2021 - Jan 2022",
     color: "#3172de",
     logo: triomics,

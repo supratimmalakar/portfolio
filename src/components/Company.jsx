@@ -33,6 +33,7 @@ function Company({ title, description, period, color, logo, tags, width }) {
             </div>
             <div style={{ background: `${color}` }} className={styles.body}>
                 <h3>{description}</h3>
+                <h3>{period}</h3>
                 <img style={{width : width}} className={styles.logo} src={logo} />
                 <a.div style={{ ...hover }} className={styles['black-screen']} />
                 <a.div style={{ ...tagsStyle }} className={styles.tags}>
