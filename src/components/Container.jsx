@@ -119,12 +119,9 @@ function Container({ styles, children, itemProps = {}, nextTab = null, prevTab =
                 style={leftArrowBoxStyle}
                 onClick={() => {
                   dispatch(setBool(true));
-                  if (!projectBool) navigate(`/${prevTab}`);
-                  else {
-                    prevTab === "portfolio"
-                      ? navigate(`/${prevTab}`)
-                      : navigate(`/portfolio/${prevTab}`);
-                  }
+                  if (!projectBool) navigate(`/${prevTab === 'about' ? '' : prevTab}`);
+                  else navigate(`/portfolio/${prevTab}`);
+                  
                 }}
                 onMouseEnter={() => {
                   setTopLeftBar({ transform: `rotate(65deg)` });
@@ -188,12 +185,9 @@ function Container({ styles, children, itemProps = {}, nextTab = null, prevTab =
                 style={rightArrowBoxStyle}
                 onClick={() => {
                   dispatch(setBool(false));
-                  if (!projectBool) navigate(`/${nextTab}`);
-                  else {
-                    nextTab === "portfolio"
-                      ? navigate(`/${nextTab}`)
-                      : navigate(`/portfolio/${nextTab}`);
-                  }
+                  if (!projectBool) navigate(`/${nextTab === 'about' ? '' : nextTab}`);
+                  else navigate(`/portfolio/${nextTab}`);
+                  
                 }}
                 onMouseEnter={() => {
                   setTopRightBar({ transform: `rotate(65deg)` });

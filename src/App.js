@@ -33,12 +33,11 @@ function App() {
         // <a.div style={{opacity : props.opacity, transform : props.xy.to(perspective)}}>
         <a.div className={styles['app-div']} style={{ ...props, transform : props.ys.to(perspective), transformOrigin : 'center right'}}>
           <Routes location={item}>
-            <Route exact path="/" element={<Navigate to='/about'/>} />
-            <Route exact path="/about" element={<About/>} />
-            <Route path="*" element={<About />} />
+            <Route exact path="/" element={<About/>} />
             <Route exact path="/portfolio" element={<Portfolio/>} />
             <Route exact path="/contact" element={<Contact/>} />
             <Route exact path="/portfolio/:projectId" element={<ProjectExpand/>}/>
+            <Route path="*" element={<About />} />
           </Routes>
         </a.div>))}
     </div>
