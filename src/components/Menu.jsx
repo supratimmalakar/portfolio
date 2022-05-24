@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styles from "./Menu.module.css";
-import { useSpring, a } from "react-spring";
 import { useSelector, useDispatch } from "react-redux";
 import { menuToggle } from "../redux/menuSlice";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -14,7 +13,7 @@ function Menu() {
 
   const onSelect = (route) => {
     dispatch(menuToggle());
-    setTimeout(() => navigate(`/${route}`), 400);
+    setTimeout(() => navigate(`/${route === 'about' ? '' : route}`), 400);
     set(route)
   };
   console.log(active === "contact");
@@ -29,7 +28,7 @@ function Menu() {
       </div>
       <div className={styles.menu}>
         <div onClick={() => onSelect("about")} className={styles.options}>
-          <p style={{ color: active === "about" && "#9f9f9f" }}>about</p>
+          <p style={{ color: active === "" && "#9f9f9f" }}>about</p>
           <div className={styles["hover-1"]} />
           <div className={styles["hover-2"]} />
         </div>

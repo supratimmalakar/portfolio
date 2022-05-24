@@ -63,7 +63,7 @@ export const companies = [
     color: "linear-gradient(85.69deg,#5f0a87 .86%,#a4508b 104.2%)",
     logo: chisel,
     tags: ["reactjs", "redux", "materialui"],
-    width: "35%",
+    width: "55%",
     id: 1,
   },
   {
@@ -73,7 +73,7 @@ export const companies = [
     color: "black",
     logo: kazam,
     tags: ["reactjs", "redux", "materialui"],
-    width: "35%",
+    width: "55%",
     id: 2,
   },
   {
@@ -83,7 +83,7 @@ export const companies = [
     color: "#3172de",
     logo: triomics,
     tags: ["reactjs", "redux", "materialui"],
-    width: "50%",
+    width: "80%",
     id: 3,
   },
 ];
@@ -130,10 +130,10 @@ function Portfolio() {
           })}
         </Grid>
         <h2>Experience</h2>
-        <Grid container direction="row" spacing={3}>
+        <Grid container direction="row" spacing={6}>
           {companies.map((company, i) => {
             return (
-              <Grid item xs={6} key={i}>
+              <Grid item xs={12} key={i} >
                 <Company {...company} />
               </Grid>
             );

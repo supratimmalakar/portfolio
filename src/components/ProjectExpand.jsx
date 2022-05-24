@@ -1,10 +1,8 @@
 import React from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Container from "./Container";
 import { projects } from "./Portfolio";
 import styles from "./ProjectExpand.module.css";
-import { useDispatch } from "react-redux";
-import { setBool } from "../redux/animateSlice";
 import LaunchIcon from "@material-ui/icons/Launch";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";

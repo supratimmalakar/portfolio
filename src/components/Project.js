@@ -41,10 +41,10 @@ function Project({ title, mainImg, hoverImg, tags, id }) {
       </div>
       <div className={styles.body}>
         <div className={styles.imgDiv}>
-          <img className={styles.mainImg} src={mainImg} />
+          <img alt={title} className={styles.mainImg} src={mainImg} />
         </div>
         <a.div style={{ ...hover }} className={styles.imgHoverDiv}>
-          <img className={styles.hoverImg} src={hoverImg} />
+          <img alt={title} className={styles.hoverImg} src={hoverImg} />
         </a.div>
         <a.div style={{ ...tagsStyle }} className={styles.tags}>
           <div className={styles['tags-wrap']}>

@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import Container from "./Container";
 import styles from "./About.module.css";
 import Social from "./Social";
-import { useTransition, useSpring, a } from "@react-spring/web";
-import TypeWriterEffect from "react-typewriter-effect";
+import { useTransition, useTrail, a } from "@react-spring/web";
 
 function About() {
   const [toggle, set] = useState(1);
+  const config = { mass: 5, tension: 2000, friction: 200 };
   const transitions = useTransition(toggle, {
     from: { position: "absolute", opacity: 0 },
     enter: { opacity: 1 },
@@ -15,15 +15,24 @@ function About() {
     onRest: () => set(toggle === 3 ? 1 : toggle + 1),
   });
 
-  const fontStyle = {
-    color: "#8a8a8a",
-    fontSize: "1.05em",
-    lineHeight: "1.95em",
-    fontWeight: "400",
-    fontFamily: "Roboto",
-    textAlign: "center",
-    margin: "0 auto",
-  };
+  const textArr = [
+    "I am an front-end web developer and IITR pre-final yearite",
+    "Check out mt latest projects and my work experinces in the portfolio section",
+    "Feel free to contact me through the contact section",
+    "or shoot a mail at supratim_m@me.iitr.ac.in",
+  ];
+
+  const [trail, api] = useTrail(textArr.length,()=> ({
+    opacity : 1,
+    y : 0,
+    from : {
+      y : 500,
+      opacity : 0
+    },
+    config,
+    delay : 400
+  }))
+
 
   return (
     <Container
@@ -88,43 +97,9 @@ function About() {
                 );
             })}
           </div>
-          {/* <p  className={styles.desc}>I am an front-end web developer and IITR pre-final yearite</p>
-          <p className={styles.desc}>Check out mt latest projects and my work experinces in the portfolio section</p>
-          <p className={styles.desc}>Feel free to contact me through the contact section</p>
-          <p className={styles.desc}>or shoot a mail at supratim_m@me.iitr.ac.in</p> */}
-          <div style={{ height: "7.8em" }}>
-            <TypeWriterEffect
-              textStyle={{ ...fontStyle }}
-              startDelay={500}
-              cursorColor="#8a8a8a"
-              text="I am an front-end web developer and IITR pre-final yearite."
-              typeSpeed={30}
-              hideCursorAfterText={true}
-            />
-            <TypeWriterEffect
-              textStyle={{ ...fontStyle }}
-              startDelay={2270}
-              cursorColor="#8a8a8a"
-              text="Check out mt latest projects and my work experinces in the portfolio section."
-              typeSpeed={30}
-              hideCursorAfterText={true}
-            />
-            <TypeWriterEffect
-              textStyle={{ ...fontStyle }}
-              startDelay={4580}
-              cursorColor="#8a8a8a"
-              text="Feel free to contact me through the contact section"
-              typeSpeed={30}
-              hideCursorAfterText={true}
-            />
-            <TypeWriterEffect
-              textStyle={{ ...fontStyle }}
-              startDelay={6110}
-              cursorColor="#8a8a8a"
-              text="or shoot a mail at supratim_m@me.iitr.ac.in"
-              typeSpeed={30}
-            />
-          </div>
+          {trail.map((styles, i) => (
+            <a.p style={{...styles}}>{textArr[i]}</a.p>
+          ))}
         </div>
         <Social />
       </div>

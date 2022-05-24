@@ -1,18 +1,18 @@
 import './App.css';
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import About from './components/About';
 import Portfolio from './components/Portfolio';
 import { useTransition, a } from '@react-spring/web'
 import styles from './components/styles.module.css'
 import Contact from './components/Contact';
 import { useSelector } from 'react-redux'
-import { Route, useLocation, Routes, Navigate } from "react-router";
+import { Route, useLocation, Routes } from "react-router";
 import ProjectExpand from './components/ProjectExpand';
 import Menu from './components/Menu';
 
 
 function App() {
-  const [ranOnce, set] = useState(false)
+
   const { a_bool } = useSelector(state => state.animate)
   const location = useLocation();
 
@@ -30,7 +30,6 @@ function App() {
     <div className="App flex fill center">
       <Menu/>
       {transitions((props, item) => (
-        // <a.div style={{opacity : props.opacity, transform : props.xy.to(perspective)}}>
         <a.div className={styles['app-div']} style={{ ...props, transform : props.ys.to(perspective), transformOrigin : 'center right'}}>
           <Routes location={item}>
             <Route exact path="/" element={<About/>} />
