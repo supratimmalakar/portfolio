@@ -15,9 +15,11 @@ function About() {
     onRest: () => set(toggle === 3 ? 1 : toggle + 1),
   });
 
+
+
   const textArr = [
     "I am an front-end web developer and IITR pre-final yearite",
-    "Check out mt latest projects and my work experinces in the portfolio section",
+    `Check out mt latest projects and my work experinces in the Portfolio section`,
     "Feel free to contact me through the contact section",
     "or shoot a mail at supratim_m@me.iitr.ac.in",
   ];

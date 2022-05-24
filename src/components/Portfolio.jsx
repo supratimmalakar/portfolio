@@ -1,34 +1,34 @@
-import  Container  from './Container'
-import React from 'react'
-import styles from './Portfolio.module.css'
-import Project from './Project'
-import { Grid } from '@material-ui/core'
-import image from '../assets/image.jpg'
-import hover from '../assets/hover.webp'
-import triomics from '../assets/triomics.png'
-import kazam from '../assets/kazam.png'
-import chisel from '../assets/chisel.webp'
-import Company from './Company'
-import triomicsHover from '../assets/test.jpg'
+import Container from "./Container";
+import React from "react";
+import styles from "./Portfolio.module.css";
+import Project from "./Project";
+import { Grid } from "@material-ui/core";
+import triomics from "../assets/triomics.png";
+import kazam from "../assets/kazam.png";
+import chisel from "../assets/chisel.webp";
+import Company from "./Company";
+import triomicsHover from "../assets/test.jpg";
 import triomicsMain from "../assets/screenshot.png";
-import chatMain from '../assets/chatMain.png'
-import chatHover from '../assets/chatHover.png'
-import triomics1 from '../assets/triomics1.jpg'
+import portfolioHover from "../assets/portfolioHover.png";
+import portfolioMain from "../assets/portfolioMain.png";
+import chatMain from "../assets/chatMain.png";
+import chatHover from "../assets/chatHover.png";
+import triomics1 from "../assets/triomics1.jpg";
 import triomics2 from "../assets/triomics2.jpg";
 import triomics3 from "../assets/triomics3.jpg";
 
 export const projects = [
   {
     title: "Triomics",
-    tags: ["Firebase", "ReactJS", "MaterialUI", "nodejs", "spring", "redux"],
+    tags: ["ReactJS", "Redux", "MaterialUI", "Typescript"],
     mainImg: triomicsMain,
     hoverImg: triomicsHover,
     id: 1,
     shortDesc:
-      "Sky Go Desktop react javascript web application build on top of the Electron framework.",
+      "Breif summary of the work done at Triomics as an front end development intern.",
     description:
-      "Project developed as a contractor with the SKY GO (UK) Desktop team. The Sky Go Desktop app is a React web application build on top of the Electron framework.\nAt this project I acted as the lead UI/UX developer specialist being the bridge between UI/UX Design, PO and the UI development team. The main challenge was to reorganize the UI structure from a react-virtualized grid into a pure CSS one. Which improved drastically the scalability and maintainability of the project.",
-    technicals: ["UX Architecture", "React", "Your Mom", "Redux"],
+      "Worked as Frontend Developer, created responsive frontend components from wireframes, integrated Restful APIs. MaterialUI was used in the entireity of the project.\n Worked on their local component library called 'freyja', ",
+    technicals: ["ReactJS", "Redux", "MaterialUI", "Typescript"],
     images: [triomicsMain, triomicsHover, triomics1, triomics2, triomics3],
   },
   {
@@ -37,62 +37,84 @@ export const projects = [
     mainImg: chatMain,
     hoverImg: chatHover,
     id: 2,
-    shortDesc: "Very nice project. 100%. Also there is a girl i like.",
-    description: `Project developed as a contractor with the SKY GO (UK) Desktop team. The Sky Go Desktop app is a React web application build on top of the Electron framework.\n At this project I acted as the lead UI/UX developer specialist being the bridge between UI/UX Design, PO and the UI development team. The main challenge was to reorganize the UI structure from a react-virtualized grid into a pure CSS one. Which improved drastically the scalability and maintainability of the project.`,
-    technicals: ["UX Architecture", "React", "Your Mom", "Redux"],
+    shortDesc: "A basic chat application built with React and Firebase.",
+    description: `Built a chat app using React in the frontend and firebase at the backend. This one has basic functionalities like login (with google), logout, sending friend request to an existing user and accepting requests and of course, the chat functionality. \n Did not focus at making the thing look prettybecause wanted to learn firebase from this project.`,
+    technicals: ["Firebase", "ReactJS", "MaterialUI"],
     appLink: "https://myfirechat.netlify.app/",
     repoLink: "https://github.com/supratimmalakar/Chat-App",
   },
   {
-    title: "Torttolio",
-    tags: ["Firebase", "ReactJS", "MaterialUI"],
-    mainImg: image,
-    hoverImg: hover,
+    title: "Portfolio",
+    tags: ["ReactJS", "Redux", "react-spring", "MaterialUI"],
+    mainImg: portfolioMain,
+    hoverImg: portfolioHover,
     id: 3,
-    shortDesc: "Very nice project. 100%. Also there is a girl i like.",
-    description: `Project developed as a contractor with the SKY GO (UK) Desktop team. The Sky Go Desktop app is a React web application build on top of the Electron framework.\n At this project I acted as the lead UI/UX developer specialist being the bridge between UI/UX Design, PO and the UI development team. The main challenge was to reorganize the UI structure from a react-virtualized grid into a pure CSS one. Which improved drastically the scalability and maintainability of the project.`,
-    technicals: ["UX Architecture", "React", "Your Mom", "Redux"],
+    shortDesc:
+      "My personal portfolio with smooth animations built using ReactJS.",
+    description: `The idea behind this project was to create a showcase of everything I've worked on in the past few months. I tried to keep the UI as simple as possible coupled with the web technologies that I believe make most sense \n The smooth animations were achieved by using react-spring. And the state management was done using Redux. I used MUI Grids for structuring everything. `,
+    technicals: [
+      "CSS animations",
+      "React",
+      "Redux",
+      "react-spring",
+      "Material UI",
+    ],
+    appLink: "https://portfolio-suprex.netlify.app/",
+    repoLink: "https://github.com/supratimmalakar/portfolio",
   },
 ];
 
 export const companies = [
   {
     title: "Chisel",
-    description: "My main contributions to this product were in form of improvements to the overall UI(using React-Redux and Semantic UI) and troubleshootingand debugging the code to ensure compatibility across a range of devices.",
+    description:
+      "My main contributions to this product were in form of improvements to the overall UI(using React-Redux and Semantic UI) and troubleshootingand debugging the code to ensure compatibility across a range of devices.",
     period: "Nov 2020 - Mar 2020",
     color: "linear-gradient(85.69deg,#5f0a87 .86%,#a4508b 104.2%)",
     logo: chisel,
-    tags: ["reactjs", "redux", "materialui"],
+    tags: ["reactjs", "redux", "Saga", "SemanticUI"],
     width: "55%",
     id: 1,
   },
   {
     title: "Kazam EV Tech",
-    description: "My main responsibilities as a member of the web team of Kazam was to build most of the frontend of their website usingtechnologies like NextJS, Bootstrap etc and then integrate the frontend with the backend.",
+    description:
+      "My main responsibilities as a member of the web team of Kazam was to build most of the frontend of their website usingtechnologies like NextJS, Bootstrap etc and then integrate the frontend with the backend.",
     period: "July 2021 - Sep 2021",
     color: "black",
     logo: kazam,
-    tags: ["reactjs", "redux", "materialui"],
+    tags: ["reactjs", "Web sockets", "sass"],
     width: "55%",
     id: 2,
   },
   {
     title: "Triomics",
-    description: "Worked as Frontend Developer, created responsive frontend components from wireframes, integrated Restful APIs.Worked on their local component library called 'freyja', ",
+    description:
+      "Worked as Frontend Developer, created responsive frontend components from wireframes, integrated Restful APIs.Worked on their local component library called 'freyja', ",
     period: "Nov 2021 - Jan 2022",
     color: "#3172de",
     logo: triomics,
-    tags: ["reactjs", "redux", "materialui"],
+    tags: ["reactjs", "redux", "materialui", "typescript"],
     width: "80%",
     id: 3,
   },
 ];
 
-const skills = ['ReactJS', 'Redux', 'MaterialUI', 'HTML/CSS/JS', 'NextJS', 'PostgreSQL', 'Firebase', 'Git', 'Sass', 'NodeJS', 'Typescript']
+const skills = [
+  "ReactJS",
+  "Redux",
+  "MaterialUI",
+  "HTML/CSS/JS",
+  "NextJS",
+  "PostgreSQL",
+  "Firebase",
+  "Git",
+  "Sass",
+  "NodeJS",
+  "Typescript",
+];
 
 function Portfolio() {
-
-
   return (
     <Container
       styles={{ background: "#2a2a2a" }}
@@ -102,9 +124,8 @@ function Portfolio() {
       <div className={styles.container}>
         <h1>web developer portfolio</h1>
         <h3>
-          From Web Components and UI/UX animations to React.JS, Redux, Vue.JS,
-          and Node.JS. Check out my latest web software development portfolio
-          projects.
+          Check out my latest web software development portfolio
+          projects, work experiences and my skillset.
         </h3>
         <h2>Skills</h2>
         <div className={styles["tags-wrap"]}>
@@ -133,7 +154,7 @@ function Portfolio() {
         <Grid container direction="row" spacing={6}>
           {companies.map((company, i) => {
             return (
-              <Grid item xs={12} key={i} >
+              <Grid item xs={12} key={i}>
                 <Company {...company} />
               </Grid>
             );
@@ -144,4 +165,4 @@ function Portfolio() {
   );
 }
 
-export default Portfolio
+export default Portfolio;
