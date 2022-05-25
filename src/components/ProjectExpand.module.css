@@ -202,3 +202,9 @@
     flex-direction: row;
     align-items: center;
 }
+
+@media only screen and (max-width: 900px) {
+    .container {
+        width: 95%;
+    }
+}

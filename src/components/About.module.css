@@ -45,3 +45,27 @@
     overflow: hidden;
     white-space: nowrap;
 }
+
+@media only screen and (max-width: 900px) {
+    .container {
+        width: 90%;
+    }
+    .about-me > p {
+    font-size: 0.95em;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .headingDiv {
+        height: 42px;
+    }
+    .heading {
+        font-size: 1.5em;
+    }
+    .container {
+        width: 100%;
+    }
+    .about-me > p {
+        font-size: 0.75em;
+    }
+}

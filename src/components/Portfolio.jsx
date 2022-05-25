@@ -144,7 +144,7 @@ function Portfolio() {
         >
           {projects.map((project, i) => {
             return (
-              <Grid item xs={6} key={i}>
+              <Grid item xs={12} key={i}>
                 <Project {...project} />
               </Grid>
             );

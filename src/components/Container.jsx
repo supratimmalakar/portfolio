@@ -164,7 +164,7 @@ function Container({ styles, children, itemProps = {}, nextTab = null, prevTab =
               </a.div>
             )}
           </Grid>
-          <Grid className={classes.itemGrid} item xs={10} {...itemProps}>
+          <Grid className={classes.itemGrid} item xs={10}  {...itemProps}>
             {children}
           </Grid>
           <Grid

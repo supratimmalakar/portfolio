@@ -98,3 +98,9 @@
     font-weight: 600;
     text-align: center;
 }
+
+@media only screen and (max-width: 900px) {
+    .container {
+        width: 95%;
+    }
+}
