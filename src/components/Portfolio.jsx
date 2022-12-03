@@ -16,6 +16,10 @@ import chatHover from "../assets/chatHover.png";
 import triomics1 from "../assets/triomics1.jpg";
 import triomics2 from "../assets/triomics2.jpg";
 import triomics3 from "../assets/triomics3.jpg";
+import create1 from "../assets/create1.png"
+import create2 from "../assets/create2.png";
+import create3 from "../assets/create3.png";
+import createlogo from "../assets/createlogo.png"
 
 export const projects = [
   {
@@ -62,6 +66,19 @@ export const projects = [
     appLink: "https://portfolio-suprex.netlify.app/",
     repoLink: "https://github.com/supratimmalakar/portfolio",
   },
+  {
+    title: "Create Protocol",
+    tags: ["NextJS", "Redux", "TailwindCSS", "Typescript", "Ether"],
+    mainImg: create2,
+    hoverImg: create1,
+    id: 4,
+    shortDesc:
+      "Breif summary of the work done at Create Protocol as an front end development intern.",
+    description:
+      "Worked as Frontend Developer, created Decentralized apps based on Web3 principles that connect to the blockchain withsmart contracts.\n Built components for a NFT marketplace that connects to IPFS, called smart contracts and connected with rest APIs",
+    technicals: ["NextJS", "Redux", "TailwindCSS", "Typescript", "Ether"],
+    images: [create1, create2, create3],
+  },
 ];
 
 export const companies = [
@@ -98,20 +115,32 @@ export const companies = [
     width: "80%",
     id: 3,
   },
+  {
+    title: "Create Protocol",
+    description:
+      "Worked as Frontend Developer, created Decentralized apps based on Web3 principles that connect to the blockchain withsmart contracts.",
+    period: "June 2022 - Aug 2022",
+    color: "#3172de",
+    logo: createlogo,
+    tags: ["reactjs", "redux", "materialui", "typescript"],
+    width: "80%",
+    id: 4,
+  },
 ];
 
 const skills = [
   "ReactJS",
   "Redux",
   "MaterialUI",
+  "TailwindCSS",
   "HTML/CSS/JS",
   "NextJS",
-  "PostgreSQL",
   "Firebase",
   "Git",
   "Sass",
   "NodeJS",
   "Typescript",
+  "MongoDB"
 ];
 
 function Portfolio() {
