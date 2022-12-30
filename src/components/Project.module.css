@@ -43,7 +43,7 @@
 }
 
 .imgDiv {
-    background: #fff;
+    background: rgb(109, 109, 109);
     width: 100%;
     aspect-ratio: 16 / 9;
     display: flex;
@@ -52,7 +52,7 @@
 }
 
 .imgHoverDiv {
-    background: #fff;
+    background: rgb(109, 109, 109);
     width: 100%;
     aspect-ratio: 16 / 9;
     display: flex;
