@@ -215,15 +215,16 @@ const skills = [
 function Portfolio() {
   return (
     <Container
-      styles={{ background: "#2a2a2a" }}
+    currTab="portfolio"
+      bgColor="#2a2a2a"
       nextTab="contact"
       prevTab="about"
     >
       <div className={styles.container}>
         <h1>web developer portfolio</h1>
         <h3>
-          Check out my latest web software development portfolio
-          projects, work experiences and my skillset.
+          Check out my latest web software development portfolio projects, work
+          experiences and my skillset.
         </h3>
         <h2>Skills</h2>
         <div className={styles["tags-wrap"]}>

@@ -69,7 +69,8 @@ useEffect(() => {
 
   return (
     <Container
-      styles={{ background: "#2f2f2f" }}
+    currTab="about"
+      bgColor="#2f2f2f"
       nextTab="portfolio"
       prevTab="contact"
     >

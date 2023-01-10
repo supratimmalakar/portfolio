@@ -20,9 +20,10 @@ function ProjectExpand() {
 
   return (
     <Container
-      styles={{ background: "#2a2a2a" }}
+      bgColor="#2a2a2a"
       prevTab={index === 0 ? null : projects[index - 1]?.id}
       nextTab={index === n - 1 ? null : projects[index + 1]?.id}
+      currTab="project"
       projectBool={true}
       indexKey={index}
     >

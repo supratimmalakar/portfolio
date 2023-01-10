@@ -9,10 +9,13 @@ import { useNavigate } from "react-router-dom";
 import AbsoluteWrapper from './AbsoluteWrapper'
 import { projects } from './Portfolio'
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import layerStyles from "./About.module.css";
 
 const useStyles = makeStyles({
     itemGrid: {
         height: '100%',
+        position : 'relative',
+        zIndex : 3
     },
     arrowitemGridGrid: {
         height: '100%',
@@ -20,10 +23,11 @@ const useStyles = makeStyles({
         position: 'sticky',
         top: '0',
         bottom: '0',
+        zIndex: 3,
     }
 })
 
-function Container({ styles, children, itemProps = {}, nextTab = null, prevTab = null, projectBool, indexKey }) {
+function Container({ currTab ,bgColor, children, itemProps = {}, nextTab = null, prevTab = null, projectBool, indexKey }) {
     let navigate = useNavigate();
     const dispatch = useDispatch()
 
@@ -74,16 +78,16 @@ function Container({ styles, children, itemProps = {}, nextTab = null, prevTab =
     }, [])
 
     return (
-      <AbsoluteWrapper>
+      <AbsoluteWrapper bgColor={bgColor}>
         <Grid
           style={{
-            ...styles,
             height: "100vh",
             width: "100vw",
             padding: "0 10px",
             overflowY: "auto",
             position: "relative",
             overflowX: "hidden",
+            zIndex: 5,
           }}
           container
           className={CSSstyles["container-grid"]}
@@ -119,9 +123,9 @@ function Container({ styles, children, itemProps = {}, nextTab = null, prevTab =
                 style={leftArrowBoxStyle}
                 onClick={() => {
                   dispatch(setBool(true));
-                  if (!projectBool) navigate(`/${prevTab === 'about' ? '' : prevTab}`);
+                  if (!projectBool)
+                    navigate(`/${prevTab === "about" ? "" : prevTab}`);
                   else navigate(`/portfolio/${prevTab}`);
-                  
                 }}
                 onMouseEnter={() => {
                   setTopLeftBar({ transform: `rotate(65deg)` });
@@ -164,9 +168,10 @@ function Container({ styles, children, itemProps = {}, nextTab = null, prevTab =
               </a.div>
             )}
           </Grid>
-          <Grid className={classes.itemGrid} item xs={10}  {...itemProps}>
+          <Grid className={classes.itemGrid} item xs={10} {...itemProps}>
             {children}
           </Grid>
+
           <Grid
             className={classes.arrowitemGridGrid}
             item
@@ -175,19 +180,22 @@ function Container({ styles, children, itemProps = {}, nextTab = null, prevTab =
             alignItems="center"
             justifyContent="center"
           >
-            <div className={CSSstyles['menu']} onClick={() => dispatch(menuToggle())}>
-                <div className={CSSstyles.menuBar}/>
-                <div className={CSSstyles.menuBar}/>
-                <div className={CSSstyles.menuBar}/>
+            <div
+              className={CSSstyles["menu"]}
+              onClick={() => dispatch(menuToggle())}
+            >
+              <div className={CSSstyles.menuBar} />
+              <div className={CSSstyles.menuBar} />
+              <div className={CSSstyles.menuBar} />
             </div>
             {nextTab && (
               <a.div
                 style={rightArrowBoxStyle}
                 onClick={() => {
                   dispatch(setBool(false));
-                  if (!projectBool) navigate(`/${nextTab === 'about' ? '' : nextTab}`);
+                  if (!projectBool)
+                    navigate(`/${nextTab === "about" ? "" : nextTab}`);
                   else navigate(`/portfolio/${nextTab}`);
-                  
                 }}
                 onMouseEnter={() => {
                   setTopRightBar({ transform: `rotate(65deg)` });
@@ -231,6 +239,11 @@ function Container({ styles, children, itemProps = {}, nextTab = null, prevTab =
             )}
           </Grid>
         </Grid>
+        <div
+          className={`${layerStyles.spacer} ${
+            currTab === "portfolio" || currTab === "project" ? layerStyles.layers2 : layerStyles.layers
+          }`}
+        />
       </AbsoluteWrapper>
     );
 }

@@ -11,6 +11,7 @@
   align-items: center;
   width: 60%;
   margin: 0 auto;
+  z-index: 5;
 }
 
 .heading {
@@ -63,6 +64,25 @@
   width: 250px;
   height: 250px;
   position: relative;
+}
+
+.spacer {
+  aspect-ratio: 900/300;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+}
+
+.layers {
+  background-image: url('../assets/layered-waves-haikei.svg');
+}
+
+.layers2 {
+  background-image: url('../assets/layered-waves-haikei2.svg');
 }
 
 @media only screen and (max-width: 900px) {

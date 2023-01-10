@@ -27,7 +27,8 @@ function Contact() {
   };
   return (
     <Container
-      styles={{ background: "#2f2f2f" }}
+    currTab="contact"
+      bgColor="#2f2f2f"
       prevTab="portfolio"
       nextTab="about"
     >
