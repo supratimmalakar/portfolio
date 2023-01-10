@@ -16,7 +16,6 @@ function Menu() {
     setTimeout(() => navigate(`/${route === 'about' ? '' : route}`), 400);
     set(route)
   };
-  console.log(active === "contact");
   return (
     <div
       style={{ transform: `translate(0,${show ? "0" : "-100%"})` }}
