@@ -29,6 +29,7 @@ import blogapp1 from "../assets/blogapp1.png";
 import blogapp2 from "../assets/blogapp2.png";
 import blogapp3 from "../assets/blogapp3.png";
 import blogapp4 from "../assets/blogapp4.png";
+import zeviLogo from "../assets/zevi-logo.png"
 
 export const projects = [
   {
@@ -194,6 +195,17 @@ export const companies = [
     tags: ["reactjs", "redux", "materialui", "typescript"],
     width: "80%",
     id: 4,
+  },
+  {
+    title: "Zevi.Ai",
+    description:
+      "Worked as Frontend Developer to create user-friendly UI for client dashboard and built components for a fully customizable online storefront.",
+    period: "Jan 2023 - Feb 2023",
+    color: "#3172de",
+    logo: zeviLogo,
+    tags: ["reactjs", "redux", "sass", "typescript", "graphql"],
+    width: "80%",
+    id: 5,
   },
 ];
 
